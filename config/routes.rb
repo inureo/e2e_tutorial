@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get    '/char/:id',   to: 'japanese_syllabary#view'
 
-  get    '/:id',        to: 'card/view'
+  # match  '/:id',        to: 'card/view', via: 'get', constraints: { id: /[0-9]+/ }, as: 'card'
   get    '/post',       to: 'card#post'
   post   '/post',       to: 'card#post'
   delete '/delete/:id', to: 'card#delete'
