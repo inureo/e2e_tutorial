@@ -1,5 +1,13 @@
 h1
-  | かるたー
+  = link_to 'かるたー', root_path
 ul
-  li
-    = link_to 'ログイン', login_path
+  - if user_signed_in?
+    li
+      = link_to 'マイページ', my_posts_path
+    li
+      = link_to 'ログアウト', logout_path
+  - else
+    li
+      = link_to 'サインアップ', signup_path
+    li
+      = link_to 'ログイン', login_path

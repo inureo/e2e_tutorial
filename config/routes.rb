@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'my/posts'
+
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     registrations: 'users/registrations'
@@ -7,7 +9,12 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get 'login',  to: 'users/sessions#new'
-    get 'signup', to: 'users/sessions#destroy'
+    get 'logout',  to: 'users/sessions#destroy'
+    get 'signup', to: 'users/registrations#new'
+  end
+
+  resource :my, controller: 'my' do
+    get :posts
   end
 
   get    '/char/:id',   to: 'japanese_syllabary#view', as: 'char'

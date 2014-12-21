@@ -1,0 +1,10 @@
+h2
+  | 投稿一覧
+ul
+  - if @posts
+    - @posts.each do |post|
+      li
+        = link_to post.text, card_path(post.id)
+  - else
+    li
+      | ないよ
