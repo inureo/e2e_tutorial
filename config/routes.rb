@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'card/view'
+  get 'japanese_syllabary/view'
 
-  get 'card/post'
+  get    '/:id',        to: 'card/view'
+  get    '/post',       to: 'card#post'
+  post   '/post',       to: 'card#post'
+  delete '/delete/:id', to: 'card#delete'
+  get    '/edit/:id',   to: 'card#edit'
 
-  get 'card/delete'
 
-  get 'card/edit'
-
-  get 'top/index'
+  get '/', to: 'top#index', as: 'root'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
