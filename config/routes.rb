@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  get    '/char/:id',   to: 'japanese_syllabary#view'
+
+  devise_for :users, controllers: {
+    sessions:      'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  devise_scope :user do
+    get 'login',  to: 'users/sessions#new'
+    get 'signup', to: 'users/sessions#destroy'
+  end
+
+  get    '/char/:id',   to: 'japanese_syllabary#view', as: 'char'
 
   match  '/:id',        to: 'card#view', via: 'get', constraints: { id: /[0-9]+/ }, as: 'card'
   get    '/post',       to: 'card#post'
