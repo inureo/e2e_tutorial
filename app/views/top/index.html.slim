@@ -1,2 +1,7 @@
-h1 Top#index
-p Find me in app/views/top/index.html.slim
+h1
+  | オリジナルかるた札を登録できるサービスです
+
+ul
+  - @chars.each do |char|
+    li
+      = link_to "「#{char.char}」", card_path(char.id)
