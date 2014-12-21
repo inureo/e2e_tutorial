@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'card/view'
+
+  get 'card/post'
+
+  get 'card/delete'
+
+  get 'card/edit'
+
+  get 'top/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
