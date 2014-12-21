@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get 'japanese_syllabary/view'
+  get    '/char/:id',   to: 'japanese_syllabary#view'
 
   get    '/:id',        to: 'card/view'
   get    '/post',       to: 'card#post'
   post   '/post',       to: 'card#post'
   delete '/delete/:id', to: 'card#delete'
   get    '/edit/:id',   to: 'card#edit'
-
 
   get '/', to: 'top#index', as: 'root'
 
