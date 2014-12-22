@@ -23,6 +23,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'seed-fu', github: 'mbleigh/seed-fu'
   gem 'byebug'
+  gem 'binding_of_caller'
 end
 
 group :development do
