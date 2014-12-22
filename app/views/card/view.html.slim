@@ -1,8 +1,8 @@
 h2
   | #{@card.id}番目に投稿されたカード
 p.card__first-letter
-  | #{@card.japanese_syllabary.char}
+  | 選択したかな「#{@card.japanese_syllabary.char}」
 p
-  | #{@card.text}
+  | 本文「#{@card.text}」
 p
   = link_to 'トップへ戻る', root_path
