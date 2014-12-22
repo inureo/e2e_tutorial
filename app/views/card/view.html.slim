@@ -1,2 +1,8 @@
-h1 Card#view
-p Find me in app/views/card/view.html.slim
+h2
+  | #{@card.id}番目に投稿されたカード
+p.card__first-letter
+  | #{@card.japanese_syllabary.char}
+p
+  | #{@card.text}
+p
+  = link_to 'トップへ戻る', root_path
