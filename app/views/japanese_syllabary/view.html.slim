@@ -1,2 +1,10 @@
-h1 JapaneseSyllabary#view
-p Find me in app/views/japanese_syllabary/view.html.slim
+h2
+  | 「#{@char}」のかるた札一覧
+ul
+  - if @cards
+    - @cards.each do |post|
+      li
+        = link_to post.text, card_path(post.id)
+  - else
+    li
+      | 投稿された札がありません
