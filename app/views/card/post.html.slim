@@ -1,2 +1,12 @@
-h1 Card#post
-p Find me in app/views/card/post.html.slim
+h2
+  | かるたを投稿する
+p
+  = simple_form_for(:card) do |f|
+    .field
+      = f.label :japanese_syllabary_id, 'かなを選んでください'
+      = f.input :japanese_syllabary_id, collection: @chars, label: ''
+    .field
+      = f.label :text, 'かるたの文言を入れて下さい'
+      = f.input_field :text
+    .actions
+      = f.submit "投稿"
