@@ -1,9 +1,9 @@
-h2
+h2.common__heading
   | オリジナルかるた札を登録できるサービスです
-p
+p.common__paragraph
   = link_to 'かるたを投稿する', post_path
 
-ul
+ul.char__list
   - @chars.each do |char|
     li
       = link_to "「#{char.char}」", char_path(char.id)

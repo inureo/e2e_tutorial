@@ -1,15 +1,18 @@
-h1
-  = link_to 'かるたー', root_path
-ul
-  - if user_signed_in?
-    li
-      = link_to 'マイページ', my_posts_path
-    li
-      = link_to 'ログアウト', logout_path
-    li
-      = link_to 'かるたを投稿する', post_path
-  - else
-    li
-      = link_to 'サインアップ', signup_path
-    li
-      = link_to 'ログイン', login_path
+header.header
+  h1.header__logo
+    = link_to 'かるたー', root_path
+  p.header__menu-button
+    = link_to 'メニュー', 'javascript:void(0);', class: 'js-menuToggle'
+  ul.header__navigation.js-menu
+    - if user_signed_in?
+      li
+        = link_to 'マイページ', my_posts_path
+      li
+        = link_to 'ログアウト', logout_path
+      li
+        = link_to 'かるたを投稿する', post_path
+    - else
+      li
+        = link_to 'サインアップ', signup_path
+      li
+        = link_to 'ログイン', login_path

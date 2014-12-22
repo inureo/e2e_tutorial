@@ -1,8 +1,8 @@
-h2
+h2.common__heading
   | #{@card.id}番目に投稿されたカード
-p.card__first-letter
+p.card__first-letter.common__paragraph
   | 選択したかな「#{@card.japanese_syllabary.char}」
-p
+p.card__text.common__paragraph
   | 本文「#{@card.text}」
-p
+p.common__paragraph
   = link_to 'トップへ戻る', root_path
