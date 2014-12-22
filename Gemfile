@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 gem 'arel'
 gem 'devise'
+gem 'simple_form'
 
 group :development, :test do
   gem 'spring'
