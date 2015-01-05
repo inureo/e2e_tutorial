@@ -1,10 +1,12 @@
 h2.common__heading
   | 投稿一覧
-ul.common__list
-  - if @posts
+- if @posts
+  dl.card__list
     - @posts.each do |post|
-      li
+      dt
+        | 「#{post.japanese_syllabary.char}」の札
+      dd
         = link_to post.text, card_path(post.id)
-  - else
-    li
-      | まだ投稿されたかるたがありません
+- else
+  p
+    | まだ投稿されたかるたがありません
