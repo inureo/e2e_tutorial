@@ -1,6 +1,9 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :user, :class => 'Users' do
-    
+    email   { Faker::Internet.email }
+    name    { Faker::Name.last_name }
+    password Digest::MD5.hexdigest(Faker::Internet.email)
   end
-
 end
