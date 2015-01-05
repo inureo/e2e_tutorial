@@ -2,6 +2,6 @@ include Warden::Test::Helpers
 
 module FeatureHelpers
   def login(user)
-    sign_in :user, user
+    login_as user, scope: :user
   end
 end

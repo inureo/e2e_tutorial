@@ -56,4 +56,9 @@ RSpec.configure do |config|
   config.after(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end
+
+  config.include Capybara::DSL
+  config.include Devise::TestHelpers, type: :controller
+  config.include FactoryGirl::Syntax::Methods
+  config.include FeatureHelpers, type: :feature
 end

@@ -18,4 +18,17 @@ feature "Users", :type => :feature do
       expect(current_path).to eq my_posts_path
     end
   end
+
+  describe 'my page' do
+    before {
+      @user = create(:user)
+      login @user
+      visit '/'
+    }
+
+    it "can't access if not login" do
+      visit my_posts_path
+      expect(current_path).to eq my_posts_path
+    end
+  end
 end
