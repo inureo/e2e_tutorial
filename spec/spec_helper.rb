@@ -42,9 +42,7 @@ RSpec.configure do |config|
   end
 
   config.before(:suite) do
-    # seed_tables              = %w(toppage_theme)
-    # DatabaseCleaner.strategy = :truncation, { except: seed_tables }
-    # DatabaseCleaner.clean_with(:truncation,  except: seed_tables)
+    SeedFu.seed(File.join([Rails.root, 'db', 'fixtures']), /(?-mix:japanese)/)
   end
 
   config.before(:each) do
