@@ -20,15 +20,19 @@ feature "Users", :type => :feature do
   end
 
   describe 'my page' do
-    before {
+    before(:all) {
       @user = create(:user)
-      login @user
-      visit '/'
     }
+
+    it 'can access if logged in' do
+      login @user
+      visit my_posts_path
+      expect(current_path).to eq my_posts_path
+    end
 
     it "can't access if not login" do
       visit my_posts_path
-      expect(current_path).to eq my_posts_path
+      expect(current_path).to eq root_path
     end
   end
 end
