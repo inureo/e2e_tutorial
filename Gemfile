@@ -23,12 +23,17 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'seed-fu', github: 'mbleigh/seed-fu'
   gem 'byebug'
+  gem 'web-console', '~> 2.0.0.beta4'
   gem 'binding_of_caller'
 end
 
 group :development do
   gem 'spring-commands-rspec'
   gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+  gem 'pry-coolline'
   gem 'better_errors'
 end
 
